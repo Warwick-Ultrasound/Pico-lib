@@ -43,7 +43,7 @@ Asks the picoscope for some values to do with the timebase that you will need to
 ### \[time, chA, chB\] = pico_single_shot(scope, acquisitionLength, interval, maxSamples)
 Gets single shot data for the first two channels, covering a time "acquisitionLength" (in seconds) after a trigger event. Returns the time and voltage arrays.
 
-** Note: the following 3 functions are nominally identical except for allowing for more channels. There isn't really any advantage to using pico_averaged_waveform over pico_averaged_waveform3, but the old functions are retained to keep legacy code working.** All of the following functions will pause code execution until a trigger event occurs, prompting data collection.
+**Note: the following 3 functions are nominally identical except for allowing for more channels. There isn't really any advantage to using pico_averaged_waveform over pico_averaged_waveform3, but the old functions are retained to keep legacy code working.** All of the following functions will pause code execution until a trigger event occurs, prompting data collection.
 
 ### \[time, chA, chB\] = pico_averaged_waveform(scope, numAvg, acquisitionLength, interval, maxSamples)
 Just like pico_single_shot only with averaging. The storage on the picoscope is fast, but limited, so if you request lots of averages or long signals then the averaging will be done in chunks on the picoscope then collected in the MATLAB function. For most signals and moderate number of averages, it will all be done on the scope, which is much faster.
